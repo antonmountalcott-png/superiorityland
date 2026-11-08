@@ -1,0 +1,27 @@
+{
+  "name": "superiorityland-io",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "server": "node server/server.mjs",
+    "start": "npm run build && node server/server.mjs",
+    "test": "vitest run",
+    "balance": "tsx scripts/balance.ts",
+    "casual": "tsx scripts/casual.ts",
+    "capture": "node scripts/capture.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/lilita-one": "^5.3.0",
+    "@fontsource/nunito": "^5.3.0",
+    "@types/node": "^26.6.6",
+    "playwright-core": "^1.65.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}
