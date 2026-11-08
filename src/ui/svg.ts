@@ -1,0 +1,67 @@
+/** Inline SVG icon set so every platform renders the same art (emoji differ per OS). */
+const wrap = (body: string) => `<svg viewBox="0 0 32 32" aria-hidden="true" stroke="#1b1530" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">${body}</svg>`;
+
+export const ICONS: Record<string, string> = {
+  troops: wrap('<circle cx="16" cy="18" r="11" fill="#7fd4ff"/><path d="M6 16a10 10 0 0 1 20 0z" fill="#5a6b45"/><circle cx="12" cy="20" r="2.4" fill="#fff"/><circle cx="20" cy="20" r="2.4" fill="#fff"/>'),
+  gold: wrap('<circle cx="16" cy="16" r="12" fill="#ffd23f"/><circle cx="16" cy="16" r="7.5" fill="#ffb700" stroke-width="1.6"/><path d="M11 11l3 2" stroke="#fff" stroke-width="2"/>'),
+  fort: wrap('<path d="M6 28V9h4v3h3V9h6v3h3V9h4v19z" fill="#c9c3b6"/><path d="M13 28v-7a3 3 0 0 1 6 0v7z" fill="#3b3350"/>'),
+  barracks: wrap('<path d="M3 27L16 8l13 19z" fill="#7d8a5a"/><path d="M12 27l4-9 4 9z" fill="#2b2432"/><path d="M16 8V3" /><path d="M16 3l7 2-7 3z" fill="#e5383b"/>'),
+  market: wrap('<path d="M6 15h20v13H6z" fill="#d6a36a"/><path d="M4 15l3-9h18l3 9z" fill="#ff8f70"/><path d="M10 6l-2 9M16 6v9M22 6l2 9" stroke-width="1.6"/><circle cx="16" cy="22" r="3.4" fill="#ffd23f"/>'),
+  bomb: wrap('<circle cx="14" cy="19" r="10" fill="#37304a"/><path d="M20 11l4-4" stroke-width="3"/><path d="M26 2l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="#ffd23f" stroke-width="1.3"/><circle cx="10.5" cy="15.5" r="2" fill="#8d84a6" stroke="none"/>'),
+  para: wrap('<path d="M3 14a13 11 0 0 1 26 0z" fill="#fff6e0"/><path d="M4 14l10 10M28 14L18 24" stroke-width="1.7"/><circle cx="16" cy="25" r="4.6" fill="#7fd4ff"/>'),
+  bolt: wrap('<path d="M18 2L6 18h8l-2 12 14-18h-9z" fill="#ffd23f"/>'),
+  sword: wrap('<path d="M25 3l4 4-15 15-4-4z" fill="#dfe6ee"/><path d="M6 17l9 9M9 23l-5 5" stroke-width="3"/>'),
+  peak: wrap('<path d="M2 28L13 8l5 8 3-4 9 16z" fill="#9c958f"/><path d="M13 8l-3.6 6.5 3.6-1.5 3.6 1.5z" fill="#fff"/>'),
+  shield: wrap('<path d="M16 3l11 4v9c0 6-4 10-11 13C9 26 5 22 5 16V7z" fill="#5fa8ff"/><path d="M16 3v26c7-3 11-7 11-13V7z" fill="#3e83db"/>'),
+  heart: wrap('<path d="M16 27C7 21 3 16 3 11a6.5 6.5 0 0 1 13-1.6A6.5 6.5 0 0 1 29 11c0 5-4 10-13 16z" fill="#ff6b7d"/>'),
+  baby: wrap('<circle cx="16" cy="17" r="11" fill="#ffd9b8"/><circle cx="12" cy="17" r="1.6" fill="#1b1530"/><circle cx="20" cy="17" r="1.6" fill="#1b1530"/><path d="M13 22c2 1.6 4 1.6 6 0" fill="none"/><path d="M16 6c-2-3 3-4 3-1" fill="none"/>'),
+  bed: wrap('<path d="M4 25V8M28 25v-8H4" fill="none" stroke-width="3"/><path d="M8 17v-4h5c2 0 3 1 3 4z" fill="#fff"/><path d="M16 17v-3h9c2 0 3 1 3 3z" fill="#7a86ff"/>'),
+  coin: wrap('<ellipse cx="16" cy="22" rx="11" ry="5" fill="#ffb700"/><ellipse cx="16" cy="16" rx="11" ry="5" fill="#ffc927"/><ellipse cx="16" cy="10" rx="11" ry="5" fill="#ffd23f"/>'),
+  city: wrap('<path d="M4 28V15l6-4 6 4v13z" fill="#f7ecd0"/><path d="M16 28V9l6-5 6 5v19z" fill="#d9e2ee"/><path d="M8 20h4M21 13h2M21 19h2" stroke-width="2.6"/>'),
+  boat: wrap('<path d="M3 19h26l-5 9H8z" fill="#a0683c"/><path d="M15 3v16" /><path d="M15 4l10 12H15z" fill="#fff"/>'),
+  handshake: wrap('<path d="M2 11l6-3 8 4 8-4 6 3v10l-6 2-8 6-8-6-6-2z" fill="#ffd9b8"/><path d="M12 14l6 6M16 12l6 6" stroke-width="1.8"/>'),
+  crown: wrap('<path d="M4 25L2 9l8 6 6-10 6 10 8-6-2 16z" fill="#ffd23f"/>'),
+  skull: wrap('<path d="M16 3C9 3 5 8 5 14c0 4 2 6 4 8v5h14v-5c2-2 4-4 4-8 0-6-4-11-11-11z" fill="#f2efe6"/><circle cx="11.5" cy="15" r="3" fill="#1b1530"/><circle cx="20.5" cy="15" r="3" fill="#1b1530"/>'),
+  flame: wrap('<path d="M16 3c2 6 9 9 9 17a9 9 0 0 1-18 0c0-4 2-6 4-9 1 3 2 4 3 4 1-4 0-8 2-12z" fill="#ff8a3c"/><path d="M16 17c1 3 4 4 4 7a4 4 0 0 1-8 0c0-3 3-4 4-7z" fill="#ffd23f"/>'),
+  shoe: wrap('<path d="M4 11l7-3 6 8 10 3c2 1 2 3 2 6H4z" fill="#ff6b5e"/><path d="M4 25h25" stroke-width="3"/><path d="M1 15h3M1 20h3" stroke-width="2"/>'),
+  helmet: wrap('<path d="M5 20a11 11 0 0 1 22 0z" fill="#7d8a5a"/><path d="M2 20h28v4H2z" fill="#5a6b45"/>'),
+  tophat: wrap('<path d="M10 5h12v16H10z" fill="#37304a"/><path d="M3 21h26v5H3z" fill="#37304a"/><path d="M10 15h12v5H10z" fill="#ffd23f"/>'),
+  bag: wrap('<path d="M11 4h10l-2 5h-6z" fill="#b98a4e"/><path d="M13 9h6c6 3 9 9 9 13 0 4-3 6-12 6S4 26 4 22c0-4 3-10 9-13z" fill="#d6a36a"/><circle cx="16" cy="20" r="4.5" fill="#ffd23f"/>'),
+  chair: wrap('<path d="M8 4h5v12H8z" fill="#b98a4e"/><path d="M8 15h16v5H8z" fill="#d6a36a"/><path d="M10 20v8M22 20v8" stroke-width="3.4"/>'),
+  world: wrap('<circle cx="16" cy="16" r="13" fill="#4aa8e8"/><path d="M8 8c4-2 8-1 9 2 1 2-2 3-1 6 1 2-1 4-3 3-3-1-3-4-6-5-1-2-1-4 1-6zM21 16c3-1 6 0 7 2-1 4-4 7-7 8-2-3-2-7 0-10z" fill="#6fcf5a" stroke-width="1.6"/>'),
+  pause: wrap('<path d="M9 5h5v22H9zM18 5h5v22h-5z" fill="#fff"/>'),
+  play: wrap('<path d="M9 4l18 12L9 28z" fill="#fff"/>'),
+  soundOn: wrap('<path d="M4 12v8h5l8 6V6l-8 6z" fill="#fff"/><path d="M21 11a7 7 0 0 1 0 10M24.5 7.5a12 12 0 0 1 0 17" fill="none" stroke="#fff"/>'),
+  soundOff: wrap('<path d="M4 12v8h5l8 6V6l-8 6z" fill="#fff"/><path d="M22 12l7 8M29 12l-7 8" stroke="#ff6b5e" stroke-width="2.8"/>'),
+  plus: wrap('<path d="M16 5v22M5 16h22" stroke="#fff" stroke-width="4"/>'),
+  minus: wrap('<path d="M5 16h22" stroke="#fff" stroke-width="4"/>'),
+  home: wrap('<path d="M4 15L16 4l12 11v13H4z" fill="#fff"/><path d="M13 28v-8h6v8z" fill="#1b1530"/>'),
+  close: wrap('<path d="M8 8l16 16M24 8L8 24" stroke="#fff" stroke-width="4"/>'),
+  closeDark: wrap('<path d="M8 8l16 16M24 8L8 24" stroke="#1b1530" stroke-width="4"/>'),
+  menu: wrap('<path d="M5 8h22M5 16h22M5 24h22" stroke="#fff" stroke-width="4"/>'),
+  flag: wrap('<path d="M8 3v26" stroke-width="3"/><path d="M8 4h16l-4 5 4 5H8z" fill="#58d68d"/>'),
+  podium: wrap('<path d="M11 12h10v16H11z" fill="#ffd23f"/><path d="M3 18h8v10H3z" fill="#d9e2ee"/><path d="M21 21h8v7h-8z" fill="#d9944a"/><path d="M16 4l1.4 2.9 3.1.4-2.3 2.1.6 3.1-2.8-1.5-2.8 1.5.6-3.1-2.3-2.1 3.1-.4z" fill="#fff6c8" stroke-width="1.2"/>'),
+  cards: wrap('<rect x="4" y="7" width="14" height="20" rx="3" fill="#fff" transform="rotate(-12 11 17)"/><rect x="13" y="5" width="14" height="20" rx="3" fill="#7fd4ff" transform="rotate(10 20 15)"/><path d="M20 11l1.5 3 3 .4-2.2 2 .5 3-2.8-1.4-2.7 1.4.5-3-2.2-2 3-.4z" fill="#ffd23f" stroke-width="1.1"/>'),
+  half: wrap('<circle cx="16" cy="16" r="13" fill="#4aa8e8"/><path d="M16 3a13 13 0 0 1 0 26z" fill="#8a4dff"/><path d="M16 3v26" stroke-width="2"/>'),
+  medal: wrap('<path d="M10 3h5l3 8h-5zM22 3h-5l-3 8h5z" fill="#e5383b"/><circle cx="16" cy="20" r="9" fill="#ffd23f"/><path d="M16 15l1.6 3.3 3.6.5-2.6 2.5.6 3.6-3.2-1.7-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z" fill="#fff6c8" stroke-width="1.2"/>'),
+  trophy: wrap('<path d="M9 4h14v7a7 7 0 0 1-14 0z" fill="#ffd23f"/><path d="M9 7H4c0 5 3 7 5.5 7M23 7h5c0 5-3 7-5.5 7" fill="none"/><path d="M14 18h4v5h-4z" fill="#e8a800"/><path d="M9 28h14v-5H9z" fill="#b5651d"/>'),
+  star: wrap('<path d="M16 3l3.9 8 8.6 1.2-6.3 6 1.6 8.6L16 22.6l-7.8 4.2 1.6-8.6-6.3-6 8.6-1.2z" fill="#ffd23f"/>'),
+  lock: wrap('<path d="M10 14v-4a6 6 0 0 1 12 0v4" fill="none" stroke-width="3"/><rect x="6" y="14" width="20" height="14" rx="3" fill="#ffd23f"/><circle cx="16" cy="21" r="2.4" fill="#1b1530" stroke="none"/>'),
+  check: wrap('<circle cx="16" cy="16" r="13" fill="#58d68d"/><path d="M9.5 16.5l4.5 4.5 8.5-9" fill="none" stroke-width="3.4"/>'),
+  ticket: wrap('<path d="M3 9h26v4a3 3 0 0 0 0 6v4H3v-4a3 3 0 0 0 0-6z" fill="#ffd23f"/><path d="M22 9v14" stroke-dasharray="2 2.4" stroke-width="1.8"/><path d="M12 11.2l1.5 3 3.3.5-2.4 2.3.6 3.3-3-1.6-3 1.6.6-3.3-2.4-2.3 3.3-.5z" fill="#fff" stroke-width="1.3"/>'),
+  arrow: wrap('<path d="M4 16h18M15 8l8 8-8 8" fill="none" stroke="currentColor" stroke-width="4.5"/>'),
+  user: wrap('<circle cx="16" cy="11" r="6" fill="#fff"/><path d="M5 28c1-7 5.5-10 11-10s10 3 11 10z" fill="#fff"/>'),
+  logout: wrap('<path d="M13 5H6v22h7" fill="none" stroke="#fff" stroke-width="3"/><path d="M12 16h15M21 10l6 6-6 6" fill="none" stroke="#fff" stroke-width="3"/>'),
+  eye: wrap('<path d="M2 16c4-7 9-10 14-10s10 3 14 10c-4 7-9 10-14 10S6 23 2 16z" fill="#fff"/><circle cx="16" cy="16" r="5" fill="#1b1530" stroke="none"/>'),
+  eyeOff: wrap('<path d="M2 16c4-7 9-10 14-10s10 3 14 10c-4 7-9 10-14 10S6 23 2 16z" fill="#fff"/><circle cx="16" cy="16" r="5" fill="#1b1530" stroke="none"/><path d="M5 4l22 24" stroke-width="3.4"/>'),
+  frame: wrap('<rect x="4" y="4" width="24" height="24" rx="7" fill="#d9944a"/><circle cx="16" cy="16" r="7.5" fill="#7a3ff0"/>'),
+  title: wrap('<path d="M3 11h26v10H3z" fill="#7fd4ff"/><path d="M3 11l-1 5 1 5M29 11l1 5-1 5" fill="none"/><path d="M8 16h16" stroke-width="2.4"/>'),
+  share: wrap('<circle cx="24" cy="7" r="4.5" fill="#fff"/><circle cx="24" cy="25" r="4.5" fill="#fff"/><circle cx="7" cy="16" r="4.5" fill="#fff"/><path d="M11 14l9-5M11 18l9 5" stroke="#fff" stroke-width="3"/>'),
+};
+
+export const icon = (name: string): string => ICONS[name] ?? '';
+
+const usesMouse = typeof matchMedia === 'function' && matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+/** Say "click" to people with a mouse and "tap" to people with a finger. */
+export const inputWords = (text: string): string => (usesMouse ? text.replace(/\bTap\b/g, 'Click').replace(/\btap\b/g, 'click') : text);
