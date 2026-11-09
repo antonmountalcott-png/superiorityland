@@ -21,8 +21,37 @@ export class HttpError extends Error {
   }
 }
 
-const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+/**
+ * Finds the Upstash connection however Vercel named it: KV_REST_API_URL / UPSTASH_REDIS_REST_URL, the same names with a
+ * custom prefix (e.g. STORAGE_KV_REST_API_URL), or only a redis[s]://default:TOKEN@host URL (REDIS_URL, KV_URL, ...).
+ */
+function findRedis(env = process.env) {
+  const keys = Object.keys(env);
+  for (const [urlSuffix, tokenSuffix] of [
+    ['KV_REST_API_URL', 'KV_REST_API_TOKEN'],
+    ['UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN'],
+    ['REDIS_REST_URL', 'REDIS_REST_TOKEN'],
+  ]) {
+    for (const k of keys) {
+      if (!k.endsWith(urlSuffix) || !env[k]) continue;
+      const token = env[k.slice(0, -urlSuffix.length) + tokenSuffix];
+      if (token) return { url: env[k], token };
+    }
+  }
+  for (const k of keys) {
+    const v = env[k];
+    if (!/(^|_)(REDIS|KV)_URL$/.test(k) || !/^rediss?:\/\//.test(v ?? '')) continue;
+    try {
+      const u = new URL(v);
+      if (u.password && u.hostname.endsWith('upstash.io')) return { url: `https://${u.hostname}`, token: decodeURIComponent(u.password) };
+    } catch {}
+  }
+  return null;
+}
+const found = findRedis();
+export const redisConfigured = !!found;
+const REDIS_URL = found?.url;
+const REDIS_TOKEN = found?.token;
 
 async function redis(...cmd) {
   if (!REDIS_URL || !REDIS_TOKEN) throw new HttpError(503, 'Accounts are not set up yet: add Upstash Redis to this Vercel project.');
